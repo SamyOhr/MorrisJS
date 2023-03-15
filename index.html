@@ -126,8 +126,68 @@
 	
 	
 	
-function fct2(){
-		alert("Exercice 1 : Créer un 2° graphique");
+    function fct2(){
+	$("#morris-area-chart").empty();
+	    Morris.Area({
+        element: 'morris-area-chart',
+        data: [{
+            period: '2010 Q1',
+            iphone: 1666,
+            ipad: null,
+            itouch: 2647
+        }, {
+            period: '2010 Q2',
+            iphone: 1778,
+            ipad: 1294,
+            itouch: 1441
+        }, {
+            period: '2010 Q3',
+            iphone: 3912,
+            ipad: 969,
+            itouch: 1501
+        }, {
+            period: '2010 Q4',
+            iphone: 2767,
+            ipad: 2597,
+            itouch: 4689
+        }, {
+            period: '2011 Q1',
+            iphone: 5810,
+            ipad: 2914,
+            itouch: 3293
+        }, {
+            period: '2011 Q2',
+            iphone: 6670,
+            ipad: 5293,
+            itouch: 2881
+        }, {
+            period: '2011 Q3',
+            iphone: 3820,
+            ipad: 2795,
+            itouch: 2588
+        }, {
+            period: '2011 Q4',
+            iphone: 25073,
+            ipad: 7967,
+            itouch: 9175
+        }, {
+            period: '2012 Q1',
+            iphone: 14687,
+            ipad: 3460,
+            itouch: 1028
+        }, {
+            period: '2012 Q2',
+            iphone: 18432,
+            ipad: 7713,
+            itouch: 791
+        }],
+        xkey: 'period',
+        ykeys: ['iphone', 'ipad', 'itouch'],
+        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        pointSize: 2,
+        hideHover: 'auto',
+        resize: true
+    });
 	}
 
 function fct3(){
