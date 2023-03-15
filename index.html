@@ -190,34 +190,25 @@
     });
 	}
 
-    function fct3() {
-    $("#morris-area-chart").empty();
-
-    // Requête AJAX pour récupérer les données depuis le fichier PHP
-    $.ajax({
-        url: "script.php",
-        type: "POST",
-        dataType: "json",
-        success: function(data) {
-            Morris.Area({
-                element: 'morris-area-chart',
-                data: data,
-                xkey: 'period',
-                ykeys: ['iphone', 'ipad', 'itouch'],
-                labels: ['iPhone', 'iPad', 'iPod Touch'],
-                pointSize: 2,
-                hideHover: 'auto',
-                resize: true
-            });
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        }
+    function fct3(){
+  $("#morris-area-chart").empty();
+  
+  // Requête PHP pour récupérer les données de la base de données
+  $.get("bdd.php", function(data){
+    Morris.Area({
+      element: 'morris-area-chart',
+      data: JSON.parse(data),
+      xkey: 'period',
+      ykeys: ['iphone', 'ipad', 'itouch'],
+      labels: ['iPhone', 'iPad', 'iPod Touch'],
+      pointSize: 2,
+      hideHover: 'auto',
+      resize: true
     });
+  });
 }
 
-
-	
+ 	
 	</script>
 	
 
