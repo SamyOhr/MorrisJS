@@ -25,7 +25,7 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#" onclick="fct1()">Graphique 1</a>
+                                        <li><a href="#" onclick="fct1()">Graphiques 1</a>
                                         </li>
                                         <li><a href="#" onclick="fct2()">Exercice 1</a>
                                         </li>
@@ -190,7 +190,23 @@
     });
 	}
 
-    
+    function fct3(){
+  $("#morris-area-chart").empty();
+  
+  // Requêt PHP pour récupérer les données de la base de donées
+  $.get("bdd.php", function(data){
+    Morris.Area({
+      element: 'morris-area-chart',
+      data: JSON.parse(data),
+      xkey: 'period',
+      ykeys: ['iphone', 'ipad', 'itouch'],
+      labels: ['iPhone', 'iPad', 'iPod Touch'],
+      pointSize: 2,
+      hideHover: 'auto',
+      resize: true
+    });
+  });
+}
 
  	
 	</script>
