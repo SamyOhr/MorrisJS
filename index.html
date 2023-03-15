@@ -190,9 +190,31 @@
     });
 	}
 
-function fct3(){
-		alert("Exercice 2 : Les données du 3° graphique sont issues d'une BDD");
-	}  
+    function fct3() {
+  $("#morris-area-chart").empty();
+
+  // Requête AJAX pour récupérer les données depuis le script PHP
+  $.ajax({
+    url: 'script.php',
+    dataType: 'json',
+    success: function(data) {
+      Morris.Area({
+        element: 'morris-area-chart',
+        data: data,
+        xkey: 'period',
+        ykeys: ['iphone', 'ipad', 'itouch'],
+        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        pointSize: 2,
+        hideHover: 'auto',
+        resize: true
+      });
+    },
+    error: function(xhr, status, error) {
+      console.error('Erreur lors de la récupération des données : ' + error);
+    }
+  });
+}
+
 	
 	</script>
 	
