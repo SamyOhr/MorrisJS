@@ -195,7 +195,7 @@
   
   // Requête PHP pour récupérer les données de la base de données
   $.get("bdd.php", function(data){
-    Morris.Area({
+    Morris.Bar({
       element: 'morris-area-chart',
       data: JSON.parse(data),
       xkey: 'period',
