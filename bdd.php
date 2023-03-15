@@ -20,7 +20,7 @@ foreach ($stmt as $row) {
     );
 }
 
-// Conversion des donnée en format JSON pour Morris.js
+// Converion des donnée en format JSON pour Morris.js
 $json_data = json_encode($data);
 
 echo $json_data;
