@@ -190,23 +190,7 @@
     });
 	}
 
-    function fct3(){
-  $("#morris-area-chart").empty();
-  
-  // Requêt PHP pour récupérer les données de la base de donées
-  $.get("bdd.php", function(data){
-    Morris.Area({
-      element: 'morris-area-chart',
-      data: JSON.parse(data),
-      xkey: 'period',
-      ykeys: ['iphone', 'ipad', 'itouch'],
-      labels: ['iPhone', 'iPad', 'iPod Touch'],
-      pointSize: 2,
-      hideHover: 'auto',
-      resize: true
-    });
-  });
-}
+    
 
  	
 	</script>
